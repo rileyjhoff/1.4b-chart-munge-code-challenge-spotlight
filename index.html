@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,7 +21,13 @@
     </header>
     <main>
         <div class="chart">
-            <canvas id="myChart"></canvas>
+            <canvas id="myBarChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="myLineChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="myPieChart"></canvas>
         </div>
     </main>
     <footer>
@@ -28,7 +35,6 @@
     </footer>
 
     <script type="module" src="./app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
