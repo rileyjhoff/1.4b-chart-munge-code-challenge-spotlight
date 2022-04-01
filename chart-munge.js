@@ -58,6 +58,7 @@ const configBar = {
   }
 };
 
+// eslint-disable-next-line no-undef
 new Chart(
   document.getElementById('myBarChart'),
   configBar
@@ -106,6 +107,7 @@ const configLine = {
   }
 };
 
+// eslint-disable-next-line no-undef
 new Chart(
   document.getElementById('myLineChart'),
   configLine
@@ -163,6 +165,7 @@ const configDoughnut = {
   }
 };
 
+// eslint-disable-next-line no-undef
 new Chart(
   document.getElementById('myDoughnutChart'),
   configDoughnut

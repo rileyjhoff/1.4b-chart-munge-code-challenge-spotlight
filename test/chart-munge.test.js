@@ -3,7 +3,7 @@ import {
   purchaseFrequencyCount,
   coolFactorCount,
   genderCount
-} from '../chart-munge.js';
+} from '../app.js';
 
 const test = QUnit.test;
 
@@ -55,7 +55,7 @@ test('testing that coolFactorCount returns an object with a count of custom cool
   expect.deepEqual(actual, expected);
 });
 
-test('testing that coolFactorCount returns an object with a count of custom cool factors', (expect) => {
+test('testing that genderCount returns an object with a count of customer gender', (expect) => {
 //Arrange
 // Set up your arguments and expectations
   const expected = {
