@@ -58,7 +58,7 @@ const configBar = {
   }
 };
 
-const myBarChart = new Chart(
+new Chart(
   document.getElementById('myBarChart'),
   configBar
 );
@@ -106,7 +106,7 @@ const configLine = {
   }
 };
 
-const myLineChart = new Chart(
+new Chart(
   document.getElementById('myLineChart'),
   configLine
 );
@@ -120,8 +120,6 @@ export const genderCount = customerData.reduce((acc, curr) => {
   }
   return acc;
 }, { });
-
-console.log(genderCount);
 
 const labelsDoughnut = Object.keys(genderCount);
 
@@ -165,7 +163,7 @@ const configDoughnut = {
   }
 };
 
-const myDoughnutChart = new Chart(
+new Chart(
   document.getElementById('myDoughnutChart'),
   configDoughnut
 );

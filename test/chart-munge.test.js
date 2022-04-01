@@ -7,10 +7,19 @@ import {
 
 const test = QUnit.test;
 
-skip('testing that purchaseFrequencyCount returns an object with a count of customer purchase frequencies', (expect) => {
+test('testing that purchaseFrequencyCount returns an object with a count of customer purchase frequencies', (expect) => {
 //Arrange
 // Set up your arguments and expectations
-  const expected = true;
+  const expected = {
+    'Often': 126,
+    'Once': 107,
+    'Daily': 142,
+    'Yearly': 128,
+    'Monthly': 123,
+    'Weekly': 122,
+    'Seldom': 129,
+    'Never': 123
+  };
 
 //Act 
 // Call the function you're testing and set the result to a const
@@ -21,10 +30,21 @@ skip('testing that purchaseFrequencyCount returns an object with a count of cust
   expect.deepEqual(actual, expected);
 });
 
-skip('testing that coolFactorCount returns an object with a count of custom cool factors', (expect) => {
+test('testing that coolFactorCount returns an object with a count of custom cool factors', (expect) => {
 //Arrange
 // Set up your arguments and expectations
-  const expected = true;
+  const expected = {
+    '1': 109,
+    '2': 119,
+    '3': 99,
+    '4': 101,
+    '5': 93,
+    '6': 102,
+    '7': 101,
+    '8': 99,
+    '9': 82,
+    '10': 95
+  };
 
 //Act 
 // Call the function you're testing and set the result to a const
