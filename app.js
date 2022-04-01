@@ -11,24 +11,34 @@ const purchaseFrequencyCount = customerData.reduce((acc, curr) => {
   return acc;
 }, { });
 
-console.log(purchaseFrequencyCount);
-
-const labelsBar = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-];
+const labelsBar = Object.keys(purchaseFrequencyCount);
 
 const dataBar = {
   labels: labelsBar,
   datasets: [{
-    label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
+    label: 'Number of customers by purchase frequency',
+    backgroundColor: [
+      '#FFB2E670', 
+      '#D972FF70',
+      '#FCD7AD70',
+      '#5296A570',
+      '#065A8270',
+      '#A5754870',
+      '#8CFFDA70',
+      '#8447FF70'
+    ],
+    borderColor: [
+      '#FFB2E6', 
+      '#D972FF',
+      '#FCD7AD',
+      '#5296A5',
+      '#065A82',
+      '#A57548',
+      '#8CFFDA',
+      '#8447FF'
+    ],
+    borderWidth: 1,
+    data: Object.values(purchaseFrequencyCount),
   }]
 };
 
@@ -53,24 +63,15 @@ const coolFactorCount = customerData.reduce((acc, curr) => {
   return acc;
 }, { });
 
-console.log(coolFactorCount);
-
-const labelsLine = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-];
+const labelsLine = Object.keys(coolFactorCount);
 
 const dataLine = {
   labels: labelsLine,
   datasets: [{
-    label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
+    label: 'Number of customers by cool factor',
+    backgroundColor: '#1B3B6F',
+    borderColor: '#1B3B6F80',
+    data: Object.values(coolFactorCount),
   }]
 };
 
@@ -97,22 +98,15 @@ const genderCount = customerData.reduce((acc, curr) => {
 
 console.log(genderCount);
 
-const labelsPie = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-];
+const labelsPie = Object.keys(genderCount);
 
 const dataPie = {
   labels: labelsPie,
   datasets: [{
     label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
+    backgroundColor: '#FFB2E6',
     borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
+    data: Object.values(genderCount),
   }]
 };
 
@@ -129,5 +123,6 @@ const myPieChart = new Chart(
 
 // Stretch Goals
 // 1. Bar chart showing average cool factor of each age demographic (0 - 10, 11 - 20, 21 - 30, etc)
+
 
 // 2. Line chart showing most frequent "purchase frequency" for each decade of customer demographic (1920 - 1929, 1930 - 1939, 1940 - 1949, etc)
