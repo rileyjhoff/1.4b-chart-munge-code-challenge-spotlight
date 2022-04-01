@@ -16,7 +16,6 @@ const labelsBar = Object.keys(purchaseFrequencyCount);
 const dataBar = {
   labels: labelsBar,
   datasets: [{
-    label: 'Number of customers by purchase frequency',
     backgroundColor: [
       '#FFB2E670', 
       '#D972FF70',
@@ -39,13 +38,24 @@ const dataBar = {
     ],
     borderWidth: 1,
     data: Object.values(purchaseFrequencyCount),
-  }]
+  }],
 };
 
 const configBar = {
   type: 'bar',
   data: dataBar,
-  options: {}
+  options: {
+    indexAxis: 'y',
+    plugins: {
+      title: {
+        display: true,
+        text: 'Number of customers by purchase frequency',
+      },
+      legend: {
+        display: false,
+      }
+    }
+  }
 };
 
 const myBarChart = new Chart(
@@ -68,17 +78,32 @@ const labelsLine = Object.keys(coolFactorCount);
 const dataLine = {
   labels: labelsLine,
   datasets: [{
-    label: 'Number of customers by cool factor',
     backgroundColor: '#1B3B6F',
     borderColor: '#1B3B6F80',
     data: Object.values(coolFactorCount),
-  }]
+  }],
 };
 
 const configLine = {
   type: 'line',
   data: dataLine,
-  options: {}
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Number of customers by cool factor',
+      },
+      legend: {
+        display: false,
+      }
+    },
+    scales: {
+      y: {
+        min: 70,
+        max: 130
+      }
+    }
+  }
 };
 
 const myLineChart = new Chart(
@@ -98,27 +123,51 @@ const genderCount = customerData.reduce((acc, curr) => {
 
 console.log(genderCount);
 
-const labelsPie = Object.keys(genderCount);
+const labelsDoughnut = Object.keys(genderCount);
 
-const dataPie = {
-  labels: labelsPie,
+const dataDoughnut = {
+  labels: labelsDoughnut,
   datasets: [{
-    label: 'My First dataset',
-    backgroundColor: '#FFB2E6',
-    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: [
+      '#FFB2E670', 
+      '#D972FF70',
+      '#FCD7AD70',
+      '#5296A570',
+      '#065A8270',
+      '#A5754870',
+      '#8CFFDA70',
+      '#8447FF70'
+    ],
+    borderColor: [
+      '#FFB2E6', 
+      '#D972FF',
+      '#FCD7AD',
+      '#5296A5',
+      '#065A82',
+      '#A57548',
+      '#8CFFDA',
+      '#8447FF'
+    ],
     data: Object.values(genderCount),
   }]
 };
 
-const configPie = {
-  type: 'pie',
-  data: dataPie,
-  options: {}
+const configDoughnut = {
+  type: 'doughnut',
+  data: dataDoughnut,
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Number of customers by gender'
+      }
+    }
+  }
 };
 
-const myPieChart = new Chart(
-  document.getElementById('myPieChart'),
-  configPie
+const myDoughnutChart = new Chart(
+  document.getElementById('myDoughnutChart'),
+  configDoughnut
 );
 
 // Stretch Goals
