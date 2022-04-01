@@ -45,7 +45,7 @@ const configBar = {
   type: 'bar',
   data: dataBar,
   options: {
-    indexAxis: 'y',
+    // indexAxis: 'y',
     plugins: {
       title: {
         display: true,
