@@ -2,7 +2,7 @@
 import { customerData } from './data.js';
 
 // 1. Bar chart showing number of customers by each purchase frequency.
-const purchaseFrequencyCount = customerData.reduce((acc, curr) => {
+export const purchaseFrequencyCount = customerData.reduce((acc, curr) => {
   if (acc[`${curr.purchase_frequency}`]) {
     acc[`${curr.purchase_frequency}`]++;
   } else {
@@ -64,7 +64,7 @@ const myBarChart = new Chart(
 );
 
 // 2. Line chart showing number of customers by each cool factor.
-const coolFactorCount = customerData.reduce((acc, curr) => {
+export const coolFactorCount = customerData.reduce((acc, curr) => {
   if (acc[`${curr.cool_factor}`]) {
     acc[`${curr.cool_factor}`]++;
   } else {
@@ -99,8 +99,8 @@ const configLine = {
     },
     scales: {
       y: {
-        min: 70,
-        max: 130
+        min: 75,
+        max: 125
       }
     }
   }
@@ -112,7 +112,7 @@ const myLineChart = new Chart(
 );
 
 // 3. Pie chart showing number of customers by each gender. Make sure you have enough colors in your chart data to make the pie chart readable.
-const genderCount = customerData.reduce((acc, curr) => {
+export const genderCount = customerData.reduce((acc, curr) => {
   if (acc[`${curr.gender}`]) {
     acc[`${curr.gender}`]++;
   } else {
